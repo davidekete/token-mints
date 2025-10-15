@@ -84,7 +84,6 @@ pub fn create_ata_for(accounts: &[AccountInfo]) -> ProgramResult {
     let token_mint = next_account_info(acc_iter)?;
     let token_program = next_account_info(acc_iter)?;
     let system_program = next_account_info(acc_iter)?;
-    let ata_program = next_account_info(acc_iter)?;
 
     // Derive the expected ATA address and compare
     let expected_ata = ata::get_associated_token_address_with_program_id(
@@ -115,7 +114,6 @@ pub fn create_ata_for(accounts: &[AccountInfo]) -> ProgramResult {
     invoke(
         &ata_instruction,
         &[
-            ata_program.clone(),
             payer.clone(),
             ata_acc.clone(),
             owner.clone(),

@@ -24,7 +24,6 @@ pub enum Ix {
     /// 3. []       token_mint
     /// 4. []       token_program
     /// 5. []       system_program
-    /// 6. []       ata_program
     CreateAtaFor,
 
     /// Burn `amount_ui` whole tokens (UI units, not base units)
